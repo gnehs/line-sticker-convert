@@ -7,14 +7,15 @@ const outputDir = __dirname + "/output/"
 async function main() {
     fs.readdir(inputDir, async (err, files) => { //讀取資料夾
         if (err) throw err;
-        let tasklist = []
         for (let fileName of files) {
             if (!/^(\.)/.test(fileName)) { // 跳過以「.」開頭的檔案   
-                tasklist.push(parseFile(fileName))
+                try {
+                    await parseFile(fileName)
+                } catch (e) {
+                    console.error(fileName, e)
+                }
             }
-
         }
-        Promise.all(tasklist);
     })
 }
 async function parseFile(fileName) {
@@ -35,7 +36,7 @@ async function parseFile(fileName) {
     let resizeOptions = {
         height: 310
     }
-    if (metadata.width > metadata.height)
+    if (metadata.width < metadata.height)
         resizeOptions = {
             width: 360
         }
