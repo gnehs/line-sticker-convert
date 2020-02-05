@@ -1,0 +1,23 @@
+{
+  "name": "line-sticker-convert",
+  "version": "1.0.0",
+  "description": "將圖片轉換為 Line 貼圖可用之格式",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnehs/line-sticker-convert.git"
+  },
+  "author": "gnehs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gnehs/line-sticker-convert/issues"
+  },
+  "homepage": "https://github.com/gnehs/line-sticker-convert#readme",
+  "dependencies": {
+    "psd": "^3.2.0",
+    "sharp": "^0.24.0"
+  }
+}
